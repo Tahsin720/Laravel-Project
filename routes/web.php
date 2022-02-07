@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserAuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return "Hellow World!";
-});
+Route::get('/login', [UserAuthController::class, 'login']);
+Route::get('/registration', [UserAuthController::class, 'registration']);
+Route::post('/register_user', [UserAuthController::class, 'registerUser'])->name('register_user');
