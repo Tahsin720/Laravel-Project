@@ -101,7 +101,7 @@
                     <h3>Log In..</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{% url 'login' %}" method="POST"> 
+                    <form action="{{route('login_user')}}" method="POST"> 
                         @if(Session::has('success'))
                         <div class="alert alert-succes">{{Session::get('success')}}</div>
                         @endif
